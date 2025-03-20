@@ -83,7 +83,7 @@ function draw_clock(obj) {
   
   for (let i = 0; i < 5; i++) {
     fill(255, 255, 150, 50 - i * 10);
-    ellipse(moonX, moonY, 100 - i * 30);
+    ellipse(moonX, moonY, 80 - i * 50);
   }
   fill(255, 255, 150);
   ellipse(moonX, moonY, 60);
@@ -187,16 +187,18 @@ function draw_clock(obj) {
   let exactSeconds = obj.seconds + obj.millis/1000;
   let carX = map(exactSeconds, 0, 60, -280, width + 280);
   
-  // Car body
-  fill(59, 76, 102);
-  rect(carX, height - 75, 105, 33, 15);
-  
   // Car top
+  fill(59, 76, 102);
   ellipse(carX + 48, height - 80, 60, 60);
   fill(137, 201, 198);
   ellipse(carX + 48, height - 80, 40, 40);
   fill(59, 76, 102);
   rect(carX + 43, height - 100, 8, 50);
+
+    // Car body
+    fill(59, 76, 102);
+    rect(carX, height - 75, 105, 33, 15);
+    
   
   // Wheels
   fill(0);
@@ -225,7 +227,15 @@ function draw_clock(obj) {
   // Trailer
   fill(59, 76, 102);
   rect(textX - 15, 434, 235, 16);
+  rect(textX - 10, 434, 100, 5);
+
+ //wheel cover
+  fill(59, 76, 102);
+  ellipse(textX + 10, height - 60, 38, 30); //wheel 1
+  ellipse(textX + 190, height - 60, 38, 30);//wheel 2
+
   fill(0);
-  ellipse(textX + 10, height - 50, 30, 30);
-  ellipse(textX + 235, height - 50, 30, 30);
+  ellipse(textX + 10, height - 50, 30, 30); //wheel 1
+  ellipse(textX + 190, height - 50, 30, 30);//wheel 2
+
 }
